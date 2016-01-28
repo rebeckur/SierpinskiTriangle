@@ -5,12 +5,12 @@ int xPos, yPos;
 
 public void setup()
 {
-	size(500, 500);
+	size(800, 800);
 	background(0);
-	numTri = 450;
+	numTri = 400;
 	triColor = color(255);
 	length = 400;
-	xPos = 50;
+	xPos = 100;
 	yPos = 450;
 }
 public void draw()
@@ -28,9 +28,9 @@ public void mouseReleased()
 	numTri/=2;
 	if (numTri == 0)
 	{
-		numTri = 450;
+		numTri = 400;
 	}
-	triColor = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+	triColor = color((int)(Math.random()*10)+30, (int)(Math.random()*120)+96, (int)(Math.random()*100)+78);
 	
 	//System.out.println(numTri);
 }
@@ -47,7 +47,7 @@ public void keyPressed()
 	}
 	if (keyCode == UP)
 	{
-		if(length < 70)
+		if(length > 1200)
 		{
 			length = 400;
 			numTri = 400;
@@ -57,7 +57,7 @@ public void keyPressed()
 }
 public void sierpinski(int x, int y, int len) 
 {
-	if (len < /*>*/ numTri)
+	if (len <= /*>*/ numTri)
 	{
 		stroke(triColor);
 		fill(triColor);
